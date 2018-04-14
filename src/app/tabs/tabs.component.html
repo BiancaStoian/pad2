@@ -1,0 +1,22 @@
+<div *ngFor='let article of bar.produse'>
+  <div class="wrapper">
+    <div class="product-img" >
+      <img [src]="article.image" height="220" width="200">
+    </div>
+    <div class="product-info">
+      <div class="product-text">
+        <h1>{{article.name}}</h1>
+        <p> {{article.description}} </p>
+      </div>
+      <div class="product-price-btn">
+        <p><span>{{article.price}}</span>$</p>
+        <div *ngIf="!article.soldOut">
+          <button type="button" class="buy">Buy now</button>
+        </div>
+        <div *ngIf="article.soldOut">
+          <button type="button" class="soldOut">Out of Stock</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

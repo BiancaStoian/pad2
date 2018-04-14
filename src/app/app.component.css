@@ -1,0 +1,46 @@
+
+.title {
+  text-align:center;
+  color: darkred;
+  font-size: 50px;
+  font-style: bold
+}
+
+.subtitle {
+  text-align:center;
+  color: darksalmon;
+  font-size: 30px;
+}
+
+ul {
+  border-radius: 60px;
+  width: 600px;
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightgoldenrodyellow;
+}
+
+bar {
+  margin: 0 auto;
+}
+
+li {
+  float: left;
+  padding-left: 40px;
+  padding-right: 40px;
+
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+li a:hover {
+  background-color: palegoldenrod;
+}
+
