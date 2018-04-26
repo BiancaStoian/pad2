@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import {IArticle} from "./app.model";
-import {IBar} from "./app.bar";
-import {BARS} from "./app.bars";
+import {Component, Inject} from '@angular/core';
+import {IArticle, IBar} from './app.model';
+import {BARS} from './app.data';
+import {ARTICLE_SERVICE, IArticleService} from "./article.service";
+
 
 @Component({
   selector: 'app-root',
@@ -10,16 +11,21 @@ import {BARS} from "./app.bars";
 })
 export class AppComponent {
   private bars: Array<IBar>;
-  private tab: string = "Îmbrăcăminte";
-  constructor() {
+  private articles: Array<IArticle>;
+  private tab: number = 1;
+  constructor(){
     this.bars = BARS;
   }
 
-  selectTab(x: string) {
+
+  selectTab(x: number) {
     this.tab = x;
   }
 
-  isSelected(x: string) {
-    return x === this.tab;
+  isSelected(x: number) {
+    if (x === this.tab){
+
+      return true;
+    }
   }
 }

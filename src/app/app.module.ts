@@ -1,20 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {forwardRef, NgModule} from '@angular/core';
 
 
 import { AppComponent } from './app.component';
 import { TabsComponent } from './tabs/tabs.component';
+import {ArticleServiceProvider} from "./article-file.service";
+import { CosComponent } from './cos/cos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TabsComponent
+    TabsComponent,
+    CosComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [forwardRef(() => ArticleServiceProvider)],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

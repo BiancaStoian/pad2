@@ -6,21 +6,23 @@
   Magazin de articole sportive
 </div>
 <p></p>
-<div class="bar">
+<div>
   <ul>
     <div *ngFor='let bar of bars'>
       <li>
-        <a (click)="selectTab(bar.name)">
+        <a (click)="selectTab(bar.type)">
           {{bar.name}}
         </a>
       </li>
     </div>
+    <li><a (click)="selectTab(4)">Coșul tău</a></li>
   </ul>
 </div>
 
 <div *ngFor='let bar of bars'>
-  <tabs [bar]="bar" *ngIf="isSelected(bar.name)"></tabs>
+  <tabs [bar]="bar.type" *ngIf="isSelected(bar.type)"></tabs>
 </div>
+<app-cos *ngIf="isSelected(4)"></app-cos>
 
 
 

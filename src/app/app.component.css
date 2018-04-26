@@ -14,17 +14,16 @@
 
 ul {
   border-radius: 60px;
-  width: 600px;
+  width: 750px;
   display: inline-block;
   list-style-type: none;
   padding: 0;
   overflow: hidden;
   background-color: lightgoldenrodyellow;
+  position:relative;
+  left:25%;
 }
 
-bar {
-  margin: 0 auto;
-}
 
 li {
   float: left;

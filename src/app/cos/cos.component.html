@@ -10,16 +10,11 @@
       </div>
       <div class="product-price-btn">
         <p><span>{{article.price}}</span>$</p>
-        <div *ngIf="article.quantity">
-          <button type="button" class="buy" (click)="addToCart(article)">Cumpără</button>
-        </div>
-        <div *ngIf="!article.quantity">
-          <button type="button" class="soldOut">Out of Stock</button>
+        <div>
+          <button type="button" class="soldOut">Renunta</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-
+<div *ngIf="articles === null" class="gol"> Cosul este gol</div>
