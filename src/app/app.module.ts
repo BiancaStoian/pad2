@@ -4,8 +4,11 @@ import {forwardRef, NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TabsComponent } from './tabs/tabs.component';
-import {ArticleServiceProvider} from "./article-file.service";
+import {ArticleServiceProvider} from "./article-rest.service";
 import { CosComponent } from './cos/cos.component';
+import {CartServiceProvider} from "./update-cart.service";
+import {HttpClientModule} from "@angular/common/http";
+import 'rxjs/add/operator/map';
 
 
 @NgModule({
@@ -15,9 +18,10 @@ import { CosComponent } from './cos/cos.component';
     CosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [forwardRef(() => ArticleServiceProvider)],
+  providers: [forwardRef(() => ArticleServiceProvider), CartServiceProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,15 +1,16 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ArticleService } from './article.service';
+import { IArticleService } from './article.service';
+import {ArticleRestService} from "./article-rest.service";
 
 describe('ArticleService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ArticleService]
+      providers: [ArticleRestService]
     });
   });
 
-  it('should be created', inject([ArticleService], (service: ArticleService) => {
+  it('should be created', inject([ArticleRestService], (service: IArticleService) => {
     expect(service).toBeTruthy();
   }));
 });

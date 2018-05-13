@@ -11,3 +11,8 @@ export interface IBar {
   name: string,
   type: number
 }
+
+export interface ICartItem {
+  article: IArticle,
+  quantity: number
+}

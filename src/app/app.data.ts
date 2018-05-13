@@ -1,4 +1,4 @@
-import {IArticle,IBar} from "./app.model";
+import {IArticle, IBar, ICartItem} from "./app.model";
 
 export let ARTICOLE: Array<IArticle> = [
   {
@@ -65,3 +65,6 @@ export let BARS: Array<IBar> = [
     type: 3
   },
 ];
+
+export let CART: Array<ICartItem> = [];
+declare var TOTAL: number;

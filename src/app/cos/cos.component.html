@@ -1,20 +1,37 @@
+<div *ngIf="articles.length !== 0" class="gol"> Cosul tau</div>
 <div *ngFor='let article of articles'>
   <div class="wrapper">
     <div class="product-img" >
-      <img [src]="article.image" height="220" width="200">
+      <img [src]="article.article.image" height="220" width="200">
     </div>
     <div class="product-info">
       <div class="product-text">
-        <h1>{{article.name}}</h1>
-        <p> {{article.description}} </p>
+        <h1>{{article.article.name}}</h1>
+        <p> {{article.article.description}} </p>
       </div>
       <div class="product-price-btn">
-        <p><span>{{article.price}}</span>$</p>
+        <p><span>{{article.article.price}}</span>$</p>
+        <p class="quantity"><span style="color: indianred">x{{article.quantity}}</span> </p>
         <div>
-          <button type="button" class="soldOut">Renunta</button>
+          <button type="button" class="remove" (click)="removeFromCart(article)">Elimina</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div *ngIf="articles === null" class="gol"> Cosul este gol</div>
+
+<div *ngIf="articles.length === 0" class="gol"> Cosul este gol</div>
+<div class="wrapper">
+  <div class="product-info">
+    <div class="product-text">
+      <h1>Cumpărați produsele</h1>
+    </div>
+    <div class="product-price-btn">
+      <p><span>Total:{{totalPrice}}</span>$</p>
+      <div>
+        <button type="button" class="cart-button-buy" (click)="buy()">Cumpără</button>
+      </div>
+    </div>
+  </div>
+</div>
+
